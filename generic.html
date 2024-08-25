@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive p5.js Sketch with Sliders</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> <!-- Include p5.js library -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #sketch-container {
+      width: 100%;
+      height: 60vh;
+    }
+    .slider-container {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sketch-container"></div>
+  
+  <div class="slider-container">
+    <label for="sizeSlider">Circle Size: <span id="sizeValue">50</span></label>
+    <input type="range" id="sizeSlider" min="10" max="200" value="50">
+  </div>
+  
+  <div class="slider-container">
+    <label for="colorR">Red: <span id="colorRValue">255</span></label>
+    <input type="range" id="colorR" min="0" max="255" value="255">
+  </div>
+  
+  <div class="slider-container">
+    <label for="colorG">Green: <span id="colorGValue">0</span></label>
+    <input type="range" id="colorG" min="0" max="255" value="0">
+  </div>
+  
+  <div class="slider-container">
+    <label for="colorB">Blue: <span id="colorBValue">0</span></label>
+    <input type="range" id="colorB" min="0" max="255" value="0">
+  </div>
+  
+  <script src="sketch.js"></script> <!-- Link to your p5.js sketch file -->
+  <script>
+    // Update slider values in the DOM
+    document.getElementById('sizeSlider').addEventListener('input', function() {
+      document.getElementById('sizeValue').textContent = this.value;
+    });
+    document.getElementById('colorR').addEventListener('input', function() {
+      document.getElementById('colorRValue').textContent = this.value;
+    });
+    document.getElementById('colorG').addEventListener('input', function() {
+      document.getElementById('colorGValue').textContent = this.value;
+    });
+    document.getElementById('colorB').addEventListener('input', function() {
+      document.getElementById('colorBValue').textContent = this.value;
+    });
+  </script>
+</body>
+</html>
+
